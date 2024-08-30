@@ -5,8 +5,8 @@ pipeline {
         stage('Build & Tag Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker build -t adijaiswal/adservice:latest ."
+                    withDockerRegistry(credentialsId: 'docker_cred', toolName: 'docker') {
+                        sh "docker build -t chuckbass11/adservice:latest ."
                     }
                 }
             }
@@ -15,8 +15,8 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker push adijaiswal/adservice:latest "
+                    withDockerRegistry(credentialsId: 'docker_cred', toolName: 'docker') {
+                        sh "docker push chuckbass11/adservice:latest "
                     }
                 }
             }
