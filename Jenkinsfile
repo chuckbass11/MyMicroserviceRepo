@@ -15,7 +15,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                    withDockerRegistry(credentialsId: 'docker_cred', toolName: 'docker') {
                         sh "docker push chuckbass11/checkoutservice:latest "
                     }
                 }
